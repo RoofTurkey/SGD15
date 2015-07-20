@@ -10,7 +10,8 @@ namespace UnityStandardAssets.Characters.FirstPerson
     {
         [Serializable]
         public class MovementSettings
-        {
+        {   
+
             public float ForwardSpeed = 8.0f;   // Speed when walking forward
             public float BackwardSpeed = 4.0f;  // Speed when walking backwards
             public float StrafeSpeed = 4.0f;    // Speed when walking sideways
@@ -124,6 +125,8 @@ namespace UnityStandardAssets.Characters.FirstPerson
         }
 
 
+		public float hitDistance = 3.0f;
+
         private void Update()
         {
             RotateView();
@@ -132,6 +135,14 @@ namespace UnityStandardAssets.Characters.FirstPerson
             {
                 m_Jump = true;
             }
+
+			//Nirish : Player now will know if an object is interactable if the raycast hits.
+			Vector3 fwd = transform.TransformDirection(Vector3.forward);
+			if (Physics.Raycast (transform.position, fwd, hitDistance)) {
+				print ("There is something in front of the object!");
+			} else {
+				print ("There is no interactable object infront of me!");
+			}
         }
 
 
