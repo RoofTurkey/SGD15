@@ -4,13 +4,12 @@ using System.Collections;
 public class Interaction : MonoBehaviour {
 
 	public float hitDistance = 3.0f;
-
+	private Vector3 fwd;
 	// Use this for initialization
 	void Start () {
-	
+			fwd = transform.TransformDirection(Vector3.forward);
 	}
 
-	Vector3 fwd = transform.TransformDirection(Vector3.forward);
 
 	// Update is called once per frame
 	void Update () {
