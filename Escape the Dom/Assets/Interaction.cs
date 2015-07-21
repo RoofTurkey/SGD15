@@ -19,23 +19,22 @@ public class Interaction : MonoBehaviour
 	// Update is called once per frame
 	public void Update () 
 	{
-		Vector3 fwd = transform.TransformDirection (Vector3.forward);
+		Vector3	fwd = transform.TransformDirection(Vector3.forward);
 		RaycastHit hit;
 		//Player now will know if an object is interactable if the raycast hits.
-		if (Physics.Raycast (transform.position, fwd, out hit, maxDistance)) {
-			if (hit.transform.tag == "InterActive") {
-				hit.transform.SendMessage ("CreateTextMessage", _cameraRecording);
-				hit.transform.SendMessage ("highlightObject", true);
-
-				canRecord = true;
+		if (Physics.Raycast (transform.position, fwd, out hit, maxDistance) && hit.transform.tag == "InterActive") 
+		{
+		    hit.transform.SendMessage("highlightObject", true);
+			canRecord = true;
+		} 
+		else 
+		{
+			foreach (GameObject interActive in GameObject.FindGameObjectsWithTag("InterActive" ))
+			{
+				ObjHighlighting obj = interActive.GetComponent<ObjHighlighting>();
+				obj.highlightObject(false);
 			}
-		} else {
-			foreach (GameObject interActive in GameObject.FindGameObjectsWithTag("InterActive" )) {
-				ObjHighlighting obj = interActive.GetComponent<ObjHighlighting> ();
-				obj.highlightObject (false);
-
-				canRecord = false;
-			}
+			canRecord = false;
 		}
 	}
 }

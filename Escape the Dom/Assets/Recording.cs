@@ -8,6 +8,7 @@ public class Recording : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		rec = GameObject.Find ("HandHeldCam").GetComponent<Interaction> ();
+
 	}
 	
 	// Update is called once per frame
@@ -22,17 +23,11 @@ public class Recording : MonoBehaviour {
 
 
 	public void StartRecording(bool canRecord) {
-		print("insideRecordingMethod");
 		if (rec.canRecord) {
 
 			Application.CaptureScreenshot ("Assets/Resources/Screenshot.png");
-			print("khebt geprint");
 			string pathToImage = "Screenshot";
-			print (pathToImage);
-
 			Texture2D texture = Resources.Load(pathToImage)as Texture2D;
-
-			print (texture);
 			Renderer renderer = GetComponent<Renderer>();
 			renderer.material.mainTexture = texture;
 			//GetComponent<Renderer>().material.color = pathToImage;
