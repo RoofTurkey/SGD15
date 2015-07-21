@@ -19,7 +19,7 @@ public class ObjHighlighting : MonoBehaviour {
 		print(recording);
 	}
 
-	public void highlightObject(bool isHit)
+	public void HighlightObject(bool isHit)
 	{
 		if (isHit) 
 		{

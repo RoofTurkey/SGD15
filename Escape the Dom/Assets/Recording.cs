@@ -15,28 +15,28 @@ public class Recording : MonoBehaviour {
 	void Update () {
 
 		if (Input.GetKeyDown("r")){
-			print("I am recording");
-			StartRecording(rec.canRecord);
+			OnClickScreenCaptureButton();
 		}
 	}
 
+	public void OnClickScreenCaptureButton()
+	{
+		StartCoroutine(StartRecording());
+	}
 
 
-	public void StartRecording(bool canRecord) {
+	public IEnumerator StartRecording() {
 		if (rec.canRecord) {
 
+			yield return new WaitForEndOfFrame();
 			Application.CaptureScreenshot ("Assets/Resources/Screenshot.png");
 			string pathToImage = "Screenshot";
+			print ("recording");
 			Texture2D texture = Resources.Load(pathToImage)as Texture2D;
 			Renderer renderer = GetComponent<Renderer>();
 			renderer.material.mainTexture = texture;
-			//GetComponent<Renderer>().material.color = pathToImage;
-
-
 			rec.canRecord = false;
-		} else {
-
-		}
+		} 
 	}
 
 

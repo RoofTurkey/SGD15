@@ -12,27 +12,30 @@ public class Interaction : MonoBehaviour
 	// Use this for initialization
 	public void Start () 
 	{ 
-		maxDistance = 6.0f;
+		maxDistance = 7.0f;
 		canRecord = false;
 	}
 
 	// Update is called once per frame
 	public void Update () 
 	{
-		Vector3	fwd = transform.TransformDirection(Vector3.forward);
+		Vector3	fwd = transform.TransformDirection(Vector3.right);
 		RaycastHit hit;
 		//Player now will know if an object is interactable if the raycast hits.
 		if (Physics.Raycast (transform.position, fwd, out hit, maxDistance) && hit.transform.tag == "InterActive") 
 		{
-		    hit.transform.SendMessage("highlightObject", true);
+			print ("inIf");
+			hit.transform.SendMessage("HighlightObject", true);
 			canRecord = true;
 		} 
 		else 
 		{
+			print ("inElse");
 			foreach (GameObject interActive in GameObject.FindGameObjectsWithTag("InterActive" ))
 			{
+				print ("infor");
 				ObjHighlighting obj = interActive.GetComponent<ObjHighlighting>();
-				obj.highlightObject(false);
+				obj.HighlightObject(false);
 			}
 			canRecord = false;
 		}
