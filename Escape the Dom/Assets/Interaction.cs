@@ -1,28 +1,41 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 
-public class Interaction : MonoBehaviour {
+public class Interaction : MonoBehaviour 
+{
+	private const string _cameraRecording = "Recording";
+	private float _distance;
+	public float maxDistance;
 
-	public float hitDistance = 3.0f;
-	private Vector3 fwd;
 	// Use this for initialization
-	void Start () {
-			fwd = transform.TransformDirection(Vector3.forward);
+	public void Start () 
+	{ 
+		maxDistance = 6.0f;
 	}
-
 
 	// Update is called once per frame
-	void Update () {
-	
-		//Nirish : Player now will know if an object is interactable if the raycast hits.
-		if (Physics.Raycast (transform.position, fwd, hitDistance)) {
-			print ("There is something in front of the object!");
-		} else {
-			print ("There is no interactable object infront of me!");
+	public void Update () 
+	{
+		Vector3	fwd = transform.TransformDirection(Vector3.forward);
+		RaycastHit hit;
+		//Player now will know if an object is interactable if the raycast hits.
+		if (Physics.Raycast (transform.position, fwd, out hit, maxDistance)) 
+		{
+			if (hit.transform.tag == "InterActive") 
+			{
+				hit.transform.SendMessage ("CreateTextMessage", _cameraRecording);
+
+				hit.transform.SendMessage("highlightObject", true);
+			}
+		} 
+		else 
+		{
+			foreach (GameObject interActive in GameObject.FindGameObjectsWithTag("InterActive" ))
+			{
+				ObjHighlighting obj = interActive.GetComponent<ObjHighlighting>();
+				obj.highlightObject(false);
+			}
 		}
-
 	}
-
-
-
 }

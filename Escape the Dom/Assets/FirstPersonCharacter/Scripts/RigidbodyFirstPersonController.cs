@@ -125,7 +125,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
         }
 
 
-		public float hitDistance = 3.0f;
+	
 
         private void Update()
         {
@@ -135,14 +135,6 @@ namespace UnityStandardAssets.Characters.FirstPerson
             {
                 m_Jump = true;
             }
-
-			//Nirish : Player now will know if an object is interactable if the raycast hits.
-			Vector3 fwd = transform.TransformDirection(Vector3.forward);
-			if (Physics.Raycast (transform.position, fwd, hitDistance)) {
-				print ("There is something in front of the object!");
-			} else {
-				print ("There is no interactable object infront of me!");
-			}
         }
 
 
