@@ -6,12 +6,13 @@ public class Recording : MonoBehaviour {
 	public Camera playerCam;
 	public Camera handCam;
 	public Camera screenShotCam;
-
-	private Camera activeCam;
+	private int test;
+	public Camera activeCam;
 	public GameObject obj;
 	// Use this for initialization
 	void Start ()
 	{
+		test = 0;
 		playerCam = Camera.main;
 		activeCam = playerCam;
 
@@ -39,9 +40,11 @@ public class Recording : MonoBehaviour {
 		}
 	}
 
-	public void ShowPlayerCam() 
+	public IEnumerator ShowPlayerCam() 
 	{
+		screenShotCam.enabled = false;
 		activeCam = playerCam;
+		yield return new WaitForSeconds (4);
 	}
 
 	public void showHandCam() 
@@ -50,40 +53,27 @@ public class Recording : MonoBehaviour {
 		activeCam = handCam;
 	}
 
-	public void ShowScreenShotCam() 
+	public IEnumerator ShowScreenShotCam() 
 	{
+		playerCam.enabled = false;
 		activeCam = screenShotCam;
+		yield return new WaitForSeconds (4);
 	}
 
 	public void OnClickScreenCaptureButton()
 	{
-	 	showHandCam ();
-		StartCoroutine(StartRecording());
+		StartCoroutine(UpdateCamera());
 		ShowPlayerCam ();
 	}
 
-	private void SetMainCameraScreen()
+	public IEnumerator UpdateCamera()
 	{
-		//mainCam.targetTexture = 
+		screenShotCam.enabled = true;
+		playerCam.enabled = false;
+
+		yield return new WaitForSeconds(4);
+
+		playerCam.enabled = true;
+		screenShotCam.enabled = false;
 	}
-
-	public IEnumerator StartRecording()
-	{
-		   //todo camera switching en todo screenshot van de frontcam
-			yield return new WaitForEndOfFrame();
-
-			Renderer renderer = obj.GetComponent<Renderer> ();
-		    //int width =  activeCam.pixelWidth;
-			//int height = activeCam.pixelHeight;
-			Texture tex = renderer.material.mainTexture;
-			
-		    ShowScreenShotCam ();
-			
-		//texture.SetPixels (tex.GetPixels ());	
-		//texture.Apply();
-			//SetMainCameraScreen();
-		//	renderer.material.mainTexture = tex;
-	}
-
-
 }
