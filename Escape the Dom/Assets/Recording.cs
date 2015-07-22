@@ -25,10 +25,12 @@ public class Recording : MonoBehaviour {
 	}
 
 
-	public IEnumerator StartRecording() {
-		if (rec.canRecord) {
-
+	public IEnumerator StartRecording()
+	{
+		if (rec.canRecord) 
+		{
 			yield return new WaitForEndOfFrame();
+
 			Application.CaptureScreenshot ("Assets/Resources/Screenshot.png");
 			string pathToImage = "Screenshot";
 			print ("recording");
