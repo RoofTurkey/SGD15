@@ -35,8 +35,8 @@ public class Interaction : MonoBehaviour
 		{
 			foreach (GameObject interActive in GameObject.FindGameObjectsWithTag("InterActive" ))
 			{
-				ObjHighlighting obj = interActive.GetComponent<ObjHighlighting>();
-				obj.HighlightObject(false);
+				//ObjHighlighting obj = interActive.GetComponent<ObjHighlighting>();
+				//obj.HighlightObject(false);
 			}
 			recording.canRecord = false;
 		}
