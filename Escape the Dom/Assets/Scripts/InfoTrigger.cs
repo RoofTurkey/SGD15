@@ -13,7 +13,7 @@ public class InfoTrigger : MonoBehaviour {
 	Text helpText;
 
 	void Start () {
-		audioPlayer = GameObject.FindGameObjectWithTag("Player").GetComponent<AudioSource>();
+		audioPlayer = GameObject.Find("MainCam").GetComponent<AudioSource>();
 		score = GameObject.Find("Score");
 		helpText = GameObject.Find("HelpText").GetComponent<Text>();
 	}
@@ -34,12 +34,14 @@ public class InfoTrigger : MonoBehaviour {
 		if (other.tag == "Player") {
 			activatable = true;
 			helpText.text = "Druk op 'E' om de info uit te spreken";
+			GameObject.Find("MainCam").GetComponent<Intro>().subtitles.text = "Press 'E' to pronounce information";
 		}
 	}
 
 	void OnTriggerExit (Collider other) {
 		if (other.tag == "Player") {
 			helpText.text = "";
+			GameObject.Find("MainCam").GetComponent<Intro>().subtitles.text = "";
 			activatable = false;
 		}
 	}

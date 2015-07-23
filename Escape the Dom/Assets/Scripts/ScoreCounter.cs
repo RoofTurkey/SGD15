@@ -14,6 +14,6 @@ public class ScoreCounter : MonoBehaviour {
 
 	public void AddScore () {
 		playerScore += 1;
-		scoreDisplay.text = "Info " + playerScore + "/7";
+		scoreDisplay.text = "Info " + playerScore + "/5";
 	}
 }

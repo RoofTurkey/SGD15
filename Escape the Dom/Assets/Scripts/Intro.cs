@@ -78,11 +78,9 @@ public class Intro : MonoBehaviour {
 			timer = 10f;
 			break;
 		case 8:
-			subtitles.text = "";
 			timer = 23f;
 			break;
 		case 9:
-			subtitles.text = "";
 			timer = 4f;
 			break;
 		case 10:
