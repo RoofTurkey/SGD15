@@ -9,6 +9,7 @@ public class Intro : MonoBehaviour {
 	float timer;
 	bool fadeIn = false;
 	float fadeSpeed = 1f;
+	public GameObject black;
 	public Text helpText;
 	public string cameraHelpText = "Bestuur de recorder met de juiste toetsencombinatie";
 	public Text subtitles;
@@ -21,7 +22,6 @@ public class Intro : MonoBehaviour {
 
 	void Start () {
 		NextState();
-		GetComponent<GUITexture>().pixelInset = new Rect(-1000f,-1000f,Screen.width * 3f,Screen.height * 3f);
 		helpText.text = "";
 	}
 
@@ -36,8 +36,8 @@ public class Intro : MonoBehaviour {
 		}
 
 		if (fadeIn) {
-			GetComponent<GUITexture>().color = Color.Lerp(GetComponent<GUITexture>().color, Color.clear, fadeSpeed * Time.deltaTime);
-			if (GetComponent<GUITexture>().color.a <= 0f) {
+			black.GetComponent<Image>().color = Color.Lerp(black.GetComponent<Image>().color, Color.clear, fadeSpeed * Time.deltaTime);
+			if (black.GetComponent<Image>().color.a <= 0f) {
 				fadeIn = false;
 			}
 		}
