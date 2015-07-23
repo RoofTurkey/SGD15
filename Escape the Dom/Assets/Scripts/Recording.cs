@@ -12,9 +12,15 @@ public class Recording : MonoBehaviour {
 	public GameObject recordingImage;
 	public bool canRecord;
 	private Renderer renderer;
+
+	ObjectManager objTeller;
+	Interaction interact;
 	// Use this for initialization
 	void Start ()
 	{
+		objTeller =GameObject.Find ("ObjectManager").GetComponent<ObjectManager> ();
+		interact = GameObject.Find ("HandHeldCam").GetComponent<Interaction> ();
+
 		playerCam = Camera.main;
 		activeCam = playerCam;
 
@@ -33,13 +39,16 @@ public class Recording : MonoBehaviour {
 	}
 	
 	// Update is called once per frame
-	void Update () 
+	void Update ()
+		//WHEN PRESSED the player wil record the item
 	{
-
-		if (Input.GetMouseButtonUp(1) || Input.GetKeyUp(KeyCode.R)){
+		if (Input.GetMouseButtonUp(1) || Input.GetKeyUp(KeyCode.R) && canRecord){
 			OnClickScreenCaptureButton();
+			interact.CheckObjectName();
+			//objTeller.ObjectChecker();
 		}
 	}
+
 
 	public void OnClickScreenCaptureButton()
 	{

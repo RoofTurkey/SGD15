@@ -21,7 +21,7 @@ public class ShowBridge : MonoBehaviour {
 	{
 		if (Input.GetKeyUp (KeyCode.E) && hasCopy && makeCopy) {
 			nonRecordableObj.DestroyBridge();
-			recordableObj.InstObject();
+			//recordableObj.InstObject();
 			makeCopy = false;
 			hasCopy = false;
 		}
