@@ -229,18 +229,19 @@ MonoBehaviour:
   m_GameObject: {fileID: 184140}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a964ba4d692904fe5b218a5f34303260, type: 3}
+  m_Script: {fileID: 11500000, guid: 768726f85b43b43b288cb6c5ebb08c92, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  black: {fileID: 0}
   helpText: {fileID: 0}
   cameraHelpText: Bestuur de recorder met de juiste toetsencombinatie
   subtitles: {fileID: 0}
-  audio1: {fileID: 8300000, guid: 678a9c9951f6e4711bba6f82a3aaeb79, type: 3}
-  audio2: {fileID: 8300000, guid: f4f9838c7583e4160bfb1e0396bcadb9, type: 3}
-  audio3: {fileID: 8300000, guid: 678a9c9951f6e4711bba6f82a3aaeb79, type: 3}
-  audio4: {fileID: 8300000, guid: 678a9c9951f6e4711bba6f82a3aaeb79, type: 3}
-  audio5: {fileID: 8300000, guid: 678a9c9951f6e4711bba6f82a3aaeb79, type: 3}
-  audio6: {fileID: 8300000, guid: 678a9c9951f6e4711bba6f82a3aaeb79, type: 3}
+  audio1: {fileID: 0}
+  audio2: {fileID: 0}
+  audio3: {fileID: 0}
+  audio4: {fileID: 0}
+  audio5: {fileID: 0}
+  audio6: {fileID: 0}
 --- !u!114 &11445726
 MonoBehaviour:
   m_ObjectHideFlags: 1
