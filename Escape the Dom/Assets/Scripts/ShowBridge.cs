@@ -19,7 +19,7 @@ public class ShowBridge : MonoBehaviour {
 	// Update is called once per frame
 	void Update () 
 	{
-		if (Input.GetKeyUp (KeyCode.E) && hasCopy) {
+		if (Input.GetKeyUp (KeyCode.E) && hasCopy && makeCopy) {
 			nonRecordableObj.DestroyBridge();
 			recordableObj.InstObject();
 			makeCopy = false;
