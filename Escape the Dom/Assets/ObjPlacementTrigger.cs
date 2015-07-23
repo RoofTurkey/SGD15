@@ -25,8 +25,17 @@ public class ObjPlacementTrigger : MonoBehaviour {
 	{
 		if (gameObject.name == "ObjTrigger") {
 			TriggerBoxName = "Recordable_Lvl1_mdl";
-			print (TriggerBoxName);
+			print (TriggerBoxName+ "van Eerste box");
+		} else{
+
 		}
+
+		if (gameObject.name == "ObjTrigger1") {
+			TriggerBoxName = "Recordable_Lvl1_mdl";
+			print (TriggerBoxName + "van TWEEDE box");
+		}
+
+
 
 		if (collider.name == "Player") {
 			//canPlace = true;

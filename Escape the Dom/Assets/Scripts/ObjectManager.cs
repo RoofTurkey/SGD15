@@ -3,7 +3,7 @@ using System.Collections;
 
 public class ObjectManager : MonoBehaviour {
 
-	public string interactiveOBJ, triggerBoxName;
+	public string triggerBoxName;
 
 	Interaction callVar;
 	ObjPlacementTrigger callTrName;
@@ -16,7 +16,7 @@ public class ObjectManager : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 
-		interactiveOBJ = "noObjectNameFound";
+		//interactiveOBJ = "noObjectNameFound";
 		triggerBoxName = "noObjectNameFound";
 
 		callVar = GameObject.Find("HandHeldCam").GetComponent<Interaction> ();
@@ -27,7 +27,7 @@ public class ObjectManager : MonoBehaviour {
 	void Update () {
 
 		if (Input.GetKeyUp (KeyCode.E)) {
-			print (triggerBoxName);
+			//print (triggerBoxName);
 			print (callVar.currentObjectName);
 			ObjectChecker();
 
@@ -36,6 +36,9 @@ public class ObjectManager : MonoBehaviour {
 
 	//oproepen waneer je Place knopje drukt
 	public void ObjectChecker(){
+		print (callVar.currentObjectName);
+		print (callTrName.TriggerBoxName);
+
 		if ((callTrName.TriggerBoxName == callVar.currentObjectName) && (callVar.currentObjectName == "Recordable_Lvl1_mdl") ) {
 			//instantie obj
 			positionObj = GameObject.Find("RecordableA_Lvl1_mdl").transform.position;
@@ -44,16 +47,22 @@ public class ObjectManager : MonoBehaviour {
 
 			ObjectPlacer(toBePlacedObj, positionObj, toBeDestroyed);
 			//destroy transparent obj;
-
+			print ("Ik zit in de eerste if");
 			//dont make it possible to place obj again
 		} else if ((callTrName.TriggerBoxName == callVar.currentObjectName) && (callVar.currentObjectName == "Bell_mdl") ) {
-		
-		} else if (interactiveOBJ == "noObjectNameFound") {
-		
-		} else if (interactiveOBJ == "noObjectNameFound") {
-		
-		} else {
+			print ("Ik zit in de tweede if");
 
+		} else if ((callTrName.TriggerBoxName == callVar.currentObjectName) && (callVar.currentObjectName == "Recordable_Lvl1_mdl")) {
+
+			print ("Ik zit in de derde if");
+			positionObj = GameObject.Find("RecordableA2_Lvl1_mdl").transform.position;
+			toBePlacedObj = GameObject.Find("Recordable_Lvl1_mdl");
+			toBeDestroyed = GameObject.Find("RecordableA2_Lvl1_mdl");
+			
+			ObjectPlacer(toBePlacedObj, positionObj, toBeDestroyed);
+
+		} else {
+			print ("Ik zit in de laatste else");
 		}
 	}
 
