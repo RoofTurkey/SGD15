@@ -1,6 +1,6 @@
 fileFormatVersion: 2
-guid: 2d721c18b8179ef40aee6cc8c771c2ed
-timeCreated: 1437643204
+guid: 2bd29a922b155fc47b04f53816ac8e02
+timeCreated: 1437650531
 licenseType: Free
 ModelImporter:
   serializedVersion: 18
@@ -9,7 +9,7 @@ ModelImporter:
     400000: //RootNode
     2300000: //RootNode
     3300000: //RootNode
-    4300000: Walkway_Small_mdl
+    4300000: Walkway5x5_mdl
     9500000: //RootNode
   materials:
     importMaterials: 1

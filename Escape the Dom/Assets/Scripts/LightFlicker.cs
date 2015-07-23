@@ -13,6 +13,8 @@ public class LightFlicker : MonoBehaviour {
 	void Update () 
 	{
 			Light light = this.GetComponent<Light> ();
-			light.intensity = Random.Range (0.0f, 4.0f);
+		if (Random.Range (0, 200) < 50) {
+			light.intensity = Random.Range (0.0f, 2.0f);
+		}
 	}
 }

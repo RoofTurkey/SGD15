@@ -1,6 +1,6 @@
 fileFormatVersion: 2
-guid: 2d721c18b8179ef40aee6cc8c771c2ed
-timeCreated: 1437643204
+guid: 03bb66612315b064e9548a569f02f778
+timeCreated: 1437642915
 licenseType: Free
 ModelImporter:
   serializedVersion: 18
@@ -9,7 +9,7 @@ ModelImporter:
     400000: //RootNode
     2300000: //RootNode
     3300000: //RootNode
-    4300000: Walkway_Small_mdl
+    4300000: GoudenKalf_mdl
     9500000: //RootNode
   materials:
     importMaterials: 1

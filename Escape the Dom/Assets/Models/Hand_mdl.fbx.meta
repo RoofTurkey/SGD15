@@ -1,88 +1,14 @@
 fileFormatVersion: 2
-guid: 0bd6e83e72ee848469bdfe69e7e2e7cf
-timeCreated: 1437580620
+guid: 463653b8dda0e2b429b41f02ce788ea0
+timeCreated: 1437642932
 licenseType: Free
 ModelImporter:
   serializedVersion: 18
   fileIDToRecycleName:
     100000: //RootNode
-    100002: Hand_mdl
-    100004: Hand_wrist1
-    100006: pCube10
-    100008: pCube11
-    100010: pCube12
-    100012: pCube13
-    100014: pCube14
-    100016: pCube15
-    100018: pCube16
-    100020: pCube17
-    100022: pCube18
-    100024: pCube3
-    100026: pCube39
-    100028: pCube4
-    100030: pCube5
-    100032: pCube6
-    100034: pCube7
-    100036: pCube8
-    100038: pCube9
-    100040: transform1
-    100042: transform10
-    100044: transform11
-    100046: transform12
-    100048: transform13
-    100050: transform14
-    100052: transform15
-    100054: transform16
-    100056: transform17
-    100058: transform18
-    100060: transform2
-    100062: transform3
-    100064: transform4
-    100066: transform5
-    100068: transform6
-    100070: transform7
-    100072: transform8
-    100074: transform9
-    400000: Hand_mdl
-    400002: //RootNode
-    400004: Hand_wrist1
-    400006: pCube10
-    400008: pCube11
-    400010: pCube12
-    400012: pCube13
-    400014: pCube14
-    400016: pCube15
-    400018: pCube16
-    400020: pCube17
-    400022: pCube18
-    400024: pCube3
-    400026: pCube39
-    400028: pCube4
-    400030: pCube5
-    400032: pCube6
-    400034: pCube7
-    400036: pCube8
-    400038: pCube9
-    400040: transform1
-    400042: transform10
-    400044: transform11
-    400046: transform12
-    400048: transform13
-    400050: transform14
-    400052: transform15
-    400054: transform16
-    400056: transform17
-    400058: transform18
-    400060: transform2
-    400062: transform3
-    400064: transform4
-    400066: transform5
-    400068: transform6
-    400070: transform7
-    400072: transform8
-    400074: transform9
-    2300000: Hand_mdl
-    3300000: Hand_mdl
+    400000: //RootNode
+    2300000: //RootNode
+    3300000: //RootNode
     4300000: Hand_mdl
     9500000: //RootNode
   materials:
