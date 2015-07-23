@@ -6,6 +6,7 @@ public class Timer : MonoBehaviour {
 
 	public Text timeDisplay;
 	public float timer;
+	public AudioClip winAudio;
 	bool started = false;
 	bool stopped = false;
 		
@@ -33,5 +34,6 @@ public class Timer : MonoBehaviour {
 
 	public void Finish () {
 		stopped = true;
+		GameObject.Find("MainCam").GetComponent<AudioSource>().PlayOneShot(winAudio,1f);
 	}
 }
