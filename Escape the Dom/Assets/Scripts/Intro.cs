@@ -56,7 +56,7 @@ public class Intro : MonoBehaviour {
 			timer = 1f;
 			break;
 		case 3:
-			subtitles.text = "*Female screaming in panic*";
+			subtitles.text = "*Screaming*";
 			GetComponent<AudioSource>().PlayOneShot(audio3,1f);
 			timer = 0.5f;
 			break;
@@ -69,13 +69,12 @@ public class Intro : MonoBehaviour {
 			timer = 1f;
 			break;
 		case 6:
-			subtitles.text = "Dear viewer, the tower has just partly collapsed and I'm currently stuck at the bottom of the domtower.";
+			subtitles.text = "Dear viewers, due to an earthquake I'm currently stuck at the bottom of the Dom tower. Hopefully I can still make it to the red carpet event in time...";
 			GetComponent<AudioSource>().PlayOneShot(audio4,1f);
 			timer = 10f;
 			break;
 		case 7:
-			subtitles.text = "The emergency services are currently probably too busy trying to control the chaos on the streets so I'll have to free myself if I still want to be in time for the festival.";
-			GetComponent<AudioSource>().PlayOneShot(audio5,1f);
+			subtitles.text = "";
 			timer = 10f;
 			break;
 		case 8:
