@@ -6,14 +6,14 @@ public class Interaction : MonoBehaviour
 {
 	private const string _cameraRecording = "Recording";
 	private float _distance;
-	public bool canRecord;
 	public float maxDistance;
+	public Recording recording;
 
 	// Use this for initialization
 	public void Start () 
 	{ 
 		maxDistance = 7.5f;
-		canRecord = false;
+		recording = GameObject.FindGameObjectWithTag("ScreenShotView").GetComponent<Recording>();
 	}
 
 	// Update is called once per frame
@@ -25,7 +25,8 @@ public class Interaction : MonoBehaviour
 		if (Physics.Raycast (transform.position, fwd, out hit, maxDistance) && hit.transform.tag == "InterActive") 
 		{
 			hit.transform.SendMessage("HighlightObject", true);
-			canRecord = true;
+			//inventory add hit.transform
+			recording.canRecord = true;
 		} 
 		else 
 		{
@@ -34,7 +35,7 @@ public class Interaction : MonoBehaviour
 				ObjHighlighting obj = interActive.GetComponent<ObjHighlighting>();
 				obj.HighlightObject(false);
 			}
-			canRecord = false;
+			recording.canRecord = false;
 		}
 	}
 }

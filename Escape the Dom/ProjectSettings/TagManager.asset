@@ -8,6 +8,8 @@ TagManager:
   - InterActive
   - ScreenShotCam
   - ScreenShotView
+  - ProgressBar
+  - ScreenShotUIView
   layers:
   - Default
   - TransparentFX

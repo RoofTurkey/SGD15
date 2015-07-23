@@ -18,17 +18,17 @@ public class ProgressBar : MonoBehaviour
 	// Update is called once per frame
 	void Update () 
 	{
-		barDisplay = Time.time * 0.71f;
+		barDisplay = Time.time * 0.51f;
 	}
 
 	void OnGUI() {
 		//draw the background:
-		GUI.BeginGroup(new Rect(pos.x, pos.y, size.x, size.y));
-		GUI.Box(new Rect(0,0, size.x, size.y), emptyTex);
+		GUI.BeginGroup(new Rect(0, 0, size.x, size.y));
+		GUI.Box(new Rect(0, 0, size.x, size.y), emptyTex);
 		
 		//draw the filled-in part:
-		GUI.BeginGroup(new Rect(0,0, size.x * barDisplay, size.y));
-		GUI.Box(new Rect(0,0, size.x, size.y), fullTex);
+		GUI.BeginGroup(new Rect(0, 0, size.x * barDisplay, size.y));
+		GUI.Box(new Rect(0, 0, size.x, size.y), fullTex);
 		GUI.EndGroup();
 		GUI.EndGroup();
 	}

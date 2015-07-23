@@ -1,21 +1,24 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.UI;
+
 
 public class Recording : MonoBehaviour {
 
 	public Camera playerCam;
 	public Camera handCam;
 	public Camera screenShotCam;
-	private int test;
 	public Camera activeCam;
-	public GameObject obj;
+	public GameObject recordingImage;
+	public bool canRecord;
+	private Renderer renderer;
 	// Use this for initialization
 	void Start ()
 	{
-		test = 0;
 		playerCam = Camera.main;
 		activeCam = playerCam;
 
+		recordingImage = GameObject.FindGameObjectWithTag ("Recording");
 		foreach (Camera cam in Camera.allCameras) 
 		{
 			if(cam.tag == "ScreenShotCam")
@@ -27,8 +30,6 @@ public class Recording : MonoBehaviour {
 				handCam = cam;
 			}
 		}
-		///plane for the screenshot
-		obj = GameObject.FindGameObjectWithTag ("ScreenShotView");
 	}
 	
 	// Update is called once per frame
@@ -40,40 +41,43 @@ public class Recording : MonoBehaviour {
 		}
 	}
 
-	public IEnumerator ShowPlayerCam() 
-	{
-		screenShotCam.enabled = false;
-		activeCam = playerCam;
-		yield return new WaitForSeconds (4);
-	}
-
-	public void showHandCam() 
-	{
-
-		activeCam = handCam;
-	}
-
-	public IEnumerator ShowScreenShotCam() 
-	{
-		playerCam.enabled = false;
-		activeCam = screenShotCam;
-		yield return new WaitForSeconds (4);
-	}
-
 	public void OnClickScreenCaptureButton()
 	{
 		StartCoroutine(UpdateCamera());
-		ShowPlayerCam ();
 	}
 
 	public IEnumerator UpdateCamera()
 	{
-		screenShotCam.enabled = true;
-		playerCam.enabled = false;
+		renderer = recordingImage.GetComponent<Renderer> ();
+		renderer.enabled = false;
+		if (canRecord) {
+			handCam.enabled = false;
+		    CreateRecordedImage ();
+			for (int i = 0; i < 10; ++i) {
+				if (i % 2 == 0) {
+					renderer.enabled = true;
+				} else {
+					renderer.enabled = false;
+				}
+				yield return new WaitForSeconds (0.2f);
+			}
+			handCam.enabled = true;
+		}
+	}
 
-		yield return new WaitForSeconds(4);
-
-		playerCam.enabled = true;
-		screenShotCam.enabled = false;
+	public void CreateRecordedImage()
+	{
+		GameObject obj = GameObject.FindGameObjectWithTag ("ScreenShotUIView");
+		// Create a texture the size of the screen, RGB24 format
+		int width = Screen.width;
+		int height = Screen.height;
+		Texture2D texture = new Texture2D(width, height, TextureFormat.RGB24, false );
+		
+		// Read screen contents into the texture
+		texture.ReadPixels( new Rect(0, 0, width, height), 0, 0 );
+		texture.Apply();
+		
+		Sprite image = Sprite.Create(texture, new Rect(0, 0, texture.width, texture.height), new Vector2(0.5f, 0.5f), 100);
+		obj.GetComponent<Image> ().sprite = image;
 	}
 }
