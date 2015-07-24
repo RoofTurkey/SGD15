@@ -5,10 +5,11 @@ public class TempItem : MonoBehaviour {
 
 	public bool isActive;
 	public bool hasBeenDrawn;
-
+	public string nameID;
 	// Use this for initialization
 	void Start ()
 	{
+		name = nameID;
 		hasBeenDrawn = false;
 		HideBridge ();
 	}

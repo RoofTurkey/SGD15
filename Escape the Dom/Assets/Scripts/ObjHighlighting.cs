@@ -3,10 +3,12 @@ using System.Collections;
 
 public class ObjHighlighting : MonoBehaviour {
 
+	public string nameID;
 	// Provides a highlight color to object thats being interacted with.
 	private Color startColor;
 	// Use this for initialization
 	void Start () {
+		name = nameID;
 		startColor = GetComponent<Renderer> ().material.GetColor ("_Color");
 	}
 
