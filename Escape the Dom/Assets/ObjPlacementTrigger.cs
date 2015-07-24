@@ -17,15 +17,15 @@ public class ObjPlacementTrigger : MonoBehaviour {
 	public void OnTriggerEnter(Collider collider)
 	{
 		isActive = true;
-		connectedObject.GetComponent<TempBridge>().isActive = true;
-		connectedObject.GetComponent<TempBridge> ().ShowBridge ();
+		connectedObject.GetComponent<TempItem>().isActive = true;
+		connectedObject.GetComponent<TempItem> ().ShowBridge ();
 	}
 	
 	public void OnTriggerExit(Collider collider)
 	{
 		isActive = false;
-		connectedObject.GetComponent<TempBridge>().isActive = false;
-		connectedObject.GetComponent<TempBridge> ().HideBridge ();
+		connectedObject.GetComponent<TempItem>().isActive = false;
+		connectedObject.GetComponent<TempItem> ().HideBridge ();
 	}
 	
 }

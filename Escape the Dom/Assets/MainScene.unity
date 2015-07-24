@@ -162,6 +162,35 @@ Transform:
   - {fileID: 788556992}
   m_Father: {fileID: 221814852}
   m_RootOrder: 1
+--- !u!1 &8599075
+GameObject:
+  m_PrefabParentObject: {fileID: 100002, guid: 44a63da9071236543a28e5e5dfb677a2, type: 3}
+  m_PrefabInternal: {fileID: 638793004}
+--- !u!64 &8599076
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 8599075}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 0
+  serializedVersion: 2
+  m_Convex: 0
+  m_Mesh: {fileID: 4300002, guid: 44a63da9071236543a28e5e5dfb677a2, type: 3}
+--- !u!114 &8599079
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 8599075}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 796cbf2d9fd77424284fa3c9e74fc2a3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isActive: 0
+  hasBeenDrawn: 0
 --- !u!1 &9683383
 GameObject:
   m_ObjectHideFlags: 0
@@ -958,7 +987,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 98876667}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1f31eec93642342438181853d2d01ffe, type: 3}
+  m_Script: {fileID: 11500000, guid: 796cbf2d9fd77424284fa3c9e74fc2a3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   isActive: 0
@@ -1181,7 +1210,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 113486392}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1f31eec93642342438181853d2d01ffe, type: 3}
+  m_Script: {fileID: 11500000, guid: 796cbf2d9fd77424284fa3c9e74fc2a3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   isActive: 0
@@ -4538,7 +4567,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 503049062}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1f31eec93642342438181853d2d01ffe, type: 3}
+  m_Script: {fileID: 11500000, guid: 796cbf2d9fd77424284fa3c9e74fc2a3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   isActive: 0
@@ -5818,6 +5847,26 @@ Prefab:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 823798616205fe64e8a5f7d1989a2d70, type: 2}
+    - target: {fileID: 9500000, guid: 44a63da9071236543a28e5e5dfb677a2, type: 3}
+      propertyPath: m_Avatar
+      value: 
+      objectReference: {fileID: 9000000, guid: 44a63da9071236543a28e5e5dfb677a2, type: 3}
+    - target: {fileID: 9500000, guid: 44a63da9071236543a28e5e5dfb677a2, type: 3}
+      propertyPath: m_ApplyRootMotion
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9500000, guid: 44a63da9071236543a28e5e5dfb677a2, type: 3}
+      propertyPath: m_UpdateMode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9500000, guid: 44a63da9071236543a28e5e5dfb677a2, type: 3}
+      propertyPath: m_CullingMode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 44a63da9071236543a28e5e5dfb677a2, type: 3}
+      propertyPath: m_TagString
+      value: RecordableObj
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 44a63da9071236543a28e5e5dfb677a2, type: 3}
   m_IsPrefabParent: 0
@@ -6814,7 +6863,7 @@ Prefab:
     - target: {fileID: 11403004, guid: 5edfc81814b43604ab5d7b8ec70e17b3, type: 2}
       propertyPath: connectedObject
       value: 
-      objectReference: {fileID: 1564895251}
+      objectReference: {fileID: 8599075}
     - target: {fileID: 145122, guid: 5edfc81814b43604ab5d7b8ec70e17b3, type: 2}
       propertyPath: m_Name
       value: ObjTrigger7
@@ -7455,7 +7504,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 809257436}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1f31eec93642342438181853d2d01ffe, type: 3}
+  m_Script: {fileID: 11500000, guid: 796cbf2d9fd77424284fa3c9e74fc2a3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   isActive: 0
@@ -9534,7 +9583,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1080567460}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1f31eec93642342438181853d2d01ffe, type: 3}
+  m_Script: {fileID: 11500000, guid: 796cbf2d9fd77424284fa3c9e74fc2a3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   isActive: 0
@@ -11311,6 +11360,10 @@ Prefab:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 7e56c14904114a54c8b85355a08b4273, type: 2}
+    - target: {fileID: 100000, guid: 44a63da9071236543a28e5e5dfb677a2, type: 3}
+      propertyPath: m_TagString
+      value: RecordableObj
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 44a63da9071236543a28e5e5dfb677a2, type: 3}
   m_IsPrefabParent: 0
@@ -14238,35 +14291,6 @@ Prefab:
 Transform:
   m_PrefabParentObject: {fileID: 400000, guid: 963de7ded5eba05469bb27f30d748463, type: 3}
   m_PrefabInternal: {fileID: 1559596821}
---- !u!1 &1564895251
-GameObject:
-  m_PrefabParentObject: {fileID: 100000, guid: 44a63da9071236543a28e5e5dfb677a2, type: 3}
-  m_PrefabInternal: {fileID: 638793004}
---- !u!64 &1564895254
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1564895251}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 0
-  serializedVersion: 2
-  m_Convex: 0
-  m_Mesh: {fileID: 0}
---- !u!114 &1564895255
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1564895251}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1f31eec93642342438181853d2d01ffe, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  isActive: 0
-  hasBeenDrawn: 0
 --- !u!1 &1577846700
 GameObject:
   m_ObjectHideFlags: 0
@@ -18680,7 +18704,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 2070215384}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1f31eec93642342438181853d2d01ffe, type: 3}
+  m_Script: {fileID: 11500000, guid: 796cbf2d9fd77424284fa3c9e74fc2a3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   isActive: 0

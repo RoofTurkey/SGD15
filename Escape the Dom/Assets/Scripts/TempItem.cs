@@ -28,5 +28,6 @@ public class TempItem : MonoBehaviour {
 	public void HideBridge()
 	{
 		gameObject.GetComponent<Renderer> ().enabled = false;
+
 	}
 }
