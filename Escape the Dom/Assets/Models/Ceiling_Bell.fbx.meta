@@ -1,7 +1,7 @@
 fileFormatVersion: 2
-guid: 7aa47da1e9cab46b28b4fff3b87a84e1
-timeCreated: 1437741871
-licenseType: Pro
+guid: 3f6059b1fd2b7bc40acd52a3c0955530
+timeCreated: 1437743181
+licenseType: Free
 ModelImporter:
   serializedVersion: 18
   fileIDToRecycleName:
@@ -9,7 +9,7 @@ ModelImporter:
     400000: //RootNode
     2300000: //RootNode
     3300000: //RootNode
-    4300000: Ceiling_Open
+    4300000: Ceiling_Bell
     9500000: //RootNode
   materials:
     importMaterials: 1
@@ -20,10 +20,6 @@ ModelImporter:
     bakeSimulation: 0
     optimizeGameObjects: 0
     motionNodeName: 
-    animationImportErrors: 
-    animationImportWarnings: 
-    animationRetargetingWarnings: 
-    animationDoRetargetingWarnings: 0
     animationCompression: 1
     animationRotationError: .5
     animationPositionError: .5

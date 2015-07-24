@@ -11,8 +11,10 @@ public class Recording : MonoBehaviour {
 	public GameObject recordingImage;
 	public bool canRecord;
 	public float maxDistance;
-
 	public ObjHighlighting currentObj;
+
+	public AudioClip play;
+	public AudioClip record;
 
 	public ObjectManager objTeller;
 	public Interaction interact;
@@ -41,6 +43,7 @@ public class Recording : MonoBehaviour {
 	{
 		if (Input.GetMouseButtonUp(1) || Input.GetKeyUp(KeyCode.R) && canRecord){
 			OnClickScreenCaptureButton();
+			GameObject.Find("MainCam").GetComponent<AudioSource>().PlayOneShot(record);
 		}
 	}
 

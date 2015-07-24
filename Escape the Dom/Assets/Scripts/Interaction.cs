@@ -8,12 +8,11 @@ public class Interaction : MonoBehaviour
 	private float _distance;
 	public float maxDistance;
 	public Recording recording;
-	//public ShowBridge bridge;
 
 	// Use this for initialization
 	public void Start () 
 	{ 
-		maxDistance = 7.5f;
+		maxDistance = 7.0f;
 		recording = GameObject.FindGameObjectWithTag("ScreenShotView").GetComponent<Recording>();
 		//bridge = GameObject.Find ("BridgeTrigger").GetComponent<ShowBridge> ();
 	}
@@ -31,6 +30,7 @@ public class Interaction : MonoBehaviour
 			//inventory add hit.transform
 			if(Input.GetKeyUp(KeyCode.R))
 			{
+			
 				recording.currentObj = hit.transform.GetComponent<ObjHighlighting>();
 			}
 		} 

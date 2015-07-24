@@ -5,7 +5,6 @@ public class ObjectManager : MonoBehaviour {
 
 	GameObject[] objPlacementTriggers;
 	public Recording recording;
-
 	// Use this for initialization
 	void Start () 
 	{
@@ -17,7 +16,7 @@ public class ObjectManager : MonoBehaviour {
 
 		if (Input.GetKeyUp (KeyCode.E)) {
 			ObjectChecker();
-
+		//	GameObject.Find("MainCam").GetComponent<AudioSource>().PlayOneShot(recording.play);
 		}
 	}
 
