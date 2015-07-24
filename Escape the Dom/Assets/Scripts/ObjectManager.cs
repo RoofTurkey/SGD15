@@ -33,7 +33,6 @@ public class ObjectManager : MonoBehaviour {
 				trigger.connectedObject.gameObject.GetComponent<Collider>().enabled = true;
 				trigger.connectedObject.transform.GetComponent<Renderer>().material.SetColor("_Color", Color.white);
 				trigger.connectedObject.transform.GetComponent<Renderer>().material.mainTexture = trigger.recording.currentObj.GetComponent<Renderer>().material.mainTexture;
-				
 			}
 		}
 	}

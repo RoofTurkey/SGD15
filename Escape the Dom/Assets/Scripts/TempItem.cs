@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class TempBridge : MonoBehaviour {
+public class TempItem : MonoBehaviour {
 
 	public bool isActive;
 	public bool hasBeenDrawn;
