@@ -3,20 +3,21 @@ using System.Collections;
 
 public class TempBridge : MonoBehaviour {
 
-	public GameObject recordingTarget;
-	public Vector3 positionObj;
+	public bool isActive;
+	public bool hasBeenDrawn;
 
 	// Use this for initialization
 	void Start ()
 	{
-		recordingTarget = new GameObject ();
-		positionObj = transform.position;
+		hasBeenDrawn = false;
+		HideBridge ();
 	}
-	
-	// Update is called once per frame
-	void Update () 
+
+	void Update()
 	{
-	
+		if (hasBeenDrawn) {
+			ShowBridge();
+		}
 	}
 
 	public void ShowBridge()

@@ -3,29 +3,29 @@ using System.Collections;
 
 public class ObjPlacementTrigger : MonoBehaviour {
 
-	public bool IsActive;
 	public GameObject connectedObject;
-	public Vector3 rotation;
-	public Quaternion test;
 	public Recording recording;
+	public bool isActive;
 
 	// Use this for initialization
 	void Start ()
 	{
-		test = connectedObject.transform.rotation;
-		rotation = new Vector3 (0,90,0);
+		isActive = false;
 		recording = GameObject.FindGameObjectWithTag("ScreenShotView").GetComponent<Recording>();
-		IsActive = false;
 	}
 
 	public void OnTriggerEnter(Collider collider)
 	{
-		IsActive = true;
+		isActive = true;
+		connectedObject.GetComponent<TempBridge>().isActive = true;
+		connectedObject.GetComponent<TempBridge> ().ShowBridge ();
 	}
 	
 	public void OnTriggerExit(Collider collider)
 	{
-		IsActive = false;
+		isActive = false;
+		connectedObject.GetComponent<TempBridge>().isActive = false;
+		connectedObject.GetComponent<TempBridge> ().HideBridge ();
 	}
 	
 }

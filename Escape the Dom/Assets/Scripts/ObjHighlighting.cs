@@ -10,11 +10,6 @@ public class ObjHighlighting : MonoBehaviour {
 		startColor = GetComponent<Renderer> ().material.GetColor ("_Color");
 	}
 
-	// Update is called once per frame
-	void Update () {
-	
-	}
-
 	public void HighlightObject(bool glow)
 	{
 		if (glow) 
@@ -24,15 +19,6 @@ public class ObjHighlighting : MonoBehaviour {
 		else 
 		{
 			GetComponent<Renderer>().material.SetColor("_Color", startColor);
-		}
-	}
-
-	public void ShowPossibleLocation(bool showObj)
-	{
-		if (showObj) {
-			gameObject.SetActive (true);
-		} else {
-			gameObject.SetActive(false);
 		}
 	}
 }

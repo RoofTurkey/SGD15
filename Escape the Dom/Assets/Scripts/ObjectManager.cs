@@ -26,10 +26,14 @@ public class ObjectManager : MonoBehaviour {
 		foreach (GameObject item in objPlacementTriggers)
 		{
 			ObjPlacementTrigger trigger = item.GetComponent<ObjPlacementTrigger>();
-			if(trigger.IsActive)
+			if(trigger.isActive)
 			{
+				trigger.connectedObject.gameObject.GetComponent<TempBridge>().hasBeenDrawn = true;
+				trigger.connectedObject.gameObject.GetComponent<TempBridge>().ShowBridge();
 				trigger.connectedObject.gameObject.GetComponent<Collider>().enabled = true;
-				trigger.connectedObject.transform.GetComponent<Renderer>().material.mainTexture = trigger.recording.currentObj.transform.GetComponent<Renderer>().material.mainTexture;
+				trigger.connectedObject.transform.GetComponent<Renderer>().material.SetColor("_Color", Color.white);
+				trigger.connectedObject.transform.GetComponent<Renderer>().material.mainTexture = trigger.recording.currentObj.GetComponent<Renderer>().material.mainTexture;
+				
 			}
 		}
 	}
