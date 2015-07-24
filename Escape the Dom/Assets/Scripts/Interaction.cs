@@ -27,10 +27,12 @@ public class Interaction : MonoBehaviour
 		if (Physics.Raycast (transform.position, fwd, out hit, maxDistance) && hit.transform.tag == "InterActive") 
 		{
 			hit.transform.SendMessage("HighlightObject", true);
-			//inventory add hit.transform
 			recording.canRecord = true;
-			recording.currentObj = hit.transform.GetComponent<ObjHighlighting>();
-			//bridge.hasCopy = true;
+			//inventory add hit.transform
+			if(Input.GetKeyUp(KeyCode.R))
+			{
+				recording.currentObj = hit.transform.GetComponent<ObjHighlighting>();
+			}
 		} 
 		else 
 		{

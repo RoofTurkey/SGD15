@@ -5,6 +5,7 @@ public class ObjPlacementTrigger : MonoBehaviour {
 
 	public GameObject connectedObject;
 	public Recording recording;
+	public GameObject animationObject;
 	public bool isActive;
 
 	// Use this for initialization
