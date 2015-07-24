@@ -35,6 +35,13 @@ public class ObjectManager : MonoBehaviour {
 					trigger.connectedObject.gameObject.GetComponent<Collider>().enabled = true;
 					trigger.connectedObject.transform.GetComponent<Renderer>().material.SetColor("_Color", Color.white);
 					trigger.connectedObject.transform.GetComponent<Renderer>().material.mainTexture = trigger.recording.currentObj.GetComponent<Renderer>().material.mainTexture;
+
+					if(trigger.recording.currentObj.name.Equals("bell"))
+					{
+						print ("Yes");
+						print (trigger.animationObject);
+						trigger.animationObject.GetComponent<PlayAnimationScript>().canPlay = true;
+					}
 				}
 			}
 		}
