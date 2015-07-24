@@ -7,18 +7,19 @@ public class Recording : MonoBehaviour {
 
 	public Camera playerCam;
 	public Camera handCam;
-	public Camera screenShotCam;
 	public Camera activeCam;
 	public GameObject recordingImage;
 	public bool canRecord;
-	private Renderer renderer;
+	public float maxDistance;
 
-	ObjectManager objTeller;
-	Interaction interact;
+	public ObjHighlighting currentObj;
+
+	public ObjectManager objTeller;
+	public Interaction interact;
 	// Use this for initialization
 	void Start ()
 	{
-		objTeller =GameObject.Find ("ObjectManager").GetComponent<ObjectManager> ();
+		objTeller = GameObject.Find ("ObjectManager").GetComponent<ObjectManager> ();
 		interact = GameObject.Find ("HandHeldCam").GetComponent<Interaction> ();
 
 		playerCam = Camera.main;
@@ -27,10 +28,6 @@ public class Recording : MonoBehaviour {
 		recordingImage = GameObject.FindGameObjectWithTag ("Recording");
 		foreach (Camera cam in Camera.allCameras) 
 		{
-			if(cam.tag == "ScreenShotCam")
-			{
-				screenShotCam = cam;
-			}
 			if(cam.tag == "HandHeldCam")
 			{
 				handCam = cam;
@@ -44,11 +41,8 @@ public class Recording : MonoBehaviour {
 	{
 		if (Input.GetMouseButtonUp(1) || Input.GetKeyUp(KeyCode.R) && canRecord){
 			OnClickScreenCaptureButton();
-			interact.CheckObjectName();
-			//objTeller.ObjectChecker();
 		}
 	}
-
 
 	public void OnClickScreenCaptureButton()
 	{
@@ -57,7 +51,7 @@ public class Recording : MonoBehaviour {
 
 	public IEnumerator UpdateCamera()
 	{
-		renderer = recordingImage.GetComponent<Renderer> ();
+		Renderer renderer = recordingImage.GetComponent<Renderer> ();
 		renderer.enabled = false;
 		if (canRecord) {
 			handCam.enabled = false;

@@ -9,12 +9,11 @@ public class Interaction : MonoBehaviour
 	public float maxDistance;
 	public Recording recording;
 	//public ShowBridge bridge;
-	public string currentObjectName;
 
 	// Use this for initialization
 	public void Start () 
 	{ 
-		maxDistance = 6.5f;
+		maxDistance = 7.5f;
 		recording = GameObject.FindGameObjectWithTag("ScreenShotView").GetComponent<Recording>();
 		//bridge = GameObject.Find ("BridgeTrigger").GetComponent<ShowBridge> ();
 	}
@@ -30,6 +29,7 @@ public class Interaction : MonoBehaviour
 			hit.transform.SendMessage("HighlightObject", true);
 			//inventory add hit.transform
 			recording.canRecord = true;
+			recording.currentObj = hit.transform.GetComponent<ObjHighlighting>();
 			//bridge.hasCopy = true;
 		} 
 		else 
@@ -40,18 +40,6 @@ public class Interaction : MonoBehaviour
 				obj.HighlightObject(false);
 			}
 			recording.canRecord = false;
-		}
-	}
-
-	//takes the name of the object for further checking
-	public void CheckObjectName(){
-		RaycastHit hitTwo;
-		Vector3	fwdTwo = transform.TransformDirection(Vector3.right);
-
-		if (Physics.Raycast (transform.position, fwdTwo, out hitTwo, maxDistance) && hitTwo.transform.tag == "InterActive") 
-		{
-			currentObjectName = hitTwo.transform.name;
-			print(currentObjectName);
 		}
 	}
 }

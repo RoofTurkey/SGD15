@@ -3,55 +3,29 @@ using System.Collections;
 
 public class ObjPlacementTrigger : MonoBehaviour {
 
-	public bool canPlace;
-	public string oldObjName, TriggerBoxName;
-
-	Interaction callVar;
+	public bool IsActive;
+	public GameObject connectedObject;
+	public Vector3 rotation;
+	public Quaternion test;
+	public Recording recording;
 
 	// Use this for initialization
-	void Start () {
-
-		callVar = GameObject.Find("HandHeldCam").GetComponent<Interaction> ();
-		//canPlace = false;
-
-			}
-	
-	// Update is called once per frame
-	void Update () {
-	
+	void Start ()
+	{
+		test = connectedObject.transform.rotation;
+		rotation = new Vector3 (0,90,0);
+		recording = GameObject.FindGameObjectWithTag("ScreenShotView").GetComponent<Recording>();
+		IsActive = false;
 	}
 
 	public void OnTriggerEnter(Collider collider)
 	{
-		if (gameObject.name == "ObjTrigger") {
-			TriggerBoxName = "Recordable_Lvl1_mdl";
-			print (TriggerBoxName+ "van Eerste box");
-		} else{
-
-		}
-
-		if (gameObject.name == "ObjTrigger1") {
-			TriggerBoxName = "Recordable_Lvl1_mdl";
-			print (TriggerBoxName + "van TWEEDE box");
-		}
-
-
-
-		if (collider.name == "Player") {
-			//canPlace = true;
-			oldObjName = callVar.currentObjectName;
-			//TriggerBoxName = gameObject.transform.name;
-			//print (TriggerBoxName + " This is When you walk in");
-		}
+		IsActive = true;
 	}
 	
 	public void OnTriggerExit(Collider collider)
 	{
-		if (collider.name == "Player") {
-			callVar.currentObjectName = oldObjName;
-			TriggerBoxName = "HasNoName";
-			//canPlace = false;
-		}
+		IsActive = false;
 	}
 	
 }

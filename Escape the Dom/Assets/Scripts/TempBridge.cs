@@ -28,9 +28,4 @@ public class TempBridge : MonoBehaviour {
 	{
 		gameObject.GetComponent<Renderer> ().enabled = false;
 	}
-
-	public void DestroyBridge()
-	{
-		gameObject.GetComponent<Renderer> ().enabled = false;
-	}
 }

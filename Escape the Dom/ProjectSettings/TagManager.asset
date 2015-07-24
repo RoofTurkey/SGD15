@@ -10,6 +10,9 @@ TagManager:
   - ScreenShotView
   - ProgressBar
   - ScreenShotUIView
+  - Recording
+  - RecordableObj
+  - ObjectTrigger
   layers:
   - Default
   - TransparentFX
