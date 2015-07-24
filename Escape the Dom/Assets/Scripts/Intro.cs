@@ -17,7 +17,6 @@ public class Intro : MonoBehaviour {
 	public AudioClip audio2;
 	public AudioClip audio3;
 	public AudioClip audio4;
-	public AudioClip audio5;
 	public AudioClip audio6;
 
 	void Start () {
@@ -78,10 +77,10 @@ public class Intro : MonoBehaviour {
 			timer = 10f;
 			break;
 		case 8:
-			timer = 23f;
+			timer = 0f;
 			break;
 		case 9:
-			timer = 4f;
+			timer = 0f;
 			break;
 		case 10:
 			subtitles.text = "Let's see if I can get anywhere using some real-life editing. Is there an object somewhere here which I can record?";
