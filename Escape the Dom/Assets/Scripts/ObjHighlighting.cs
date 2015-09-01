@@ -16,7 +16,7 @@ public class ObjHighlighting : MonoBehaviour {
 	{
 		if (glow) 
 		{
-			GetComponent<Renderer>().material.SetColor("_Color", Color.red);
+			GetComponent<Renderer>().material.SetColor("_Color", Color.cyan);
 		} 
 		else 
 		{

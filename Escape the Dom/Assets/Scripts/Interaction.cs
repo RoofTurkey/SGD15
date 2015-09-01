@@ -12,7 +12,7 @@ public class Interaction : MonoBehaviour
 	// Use this for initialization
 	public void Start () 
 	{ 
-		maxDistance = 7.0f;
+		maxDistance = 8.0f;
 		recording = GameObject.FindGameObjectWithTag("ScreenShotView").GetComponent<Recording>();
 		//bridge = GameObject.Find ("BridgeTrigger").GetComponent<ShowBridge> ();
 	}
