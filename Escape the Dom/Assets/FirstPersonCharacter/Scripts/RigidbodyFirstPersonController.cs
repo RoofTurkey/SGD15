@@ -135,6 +135,12 @@ namespace UnityStandardAssets.Characters.FirstPerson
             {
                 m_Jump = true;
             }
+
+			  
+			if (Input.GetKeyDown (KeyCode.P)) {  
+				Application.LoadLevel (0);
+			}
+				
         }
 
 
