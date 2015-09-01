@@ -7,7 +7,9 @@ public class Menu : MonoBehaviour {
 		Time.timeScale = 0f;
 	}
 
-	public void StartGame () {
+	public void StartGame (int changeTo) {
+
 		Time.timeScale = 1f;
+		Application.LoadLevel (changeTo);
 	}
 }
